@@ -1,0 +1,83 @@
+Enter the Linux command to create both a parent directory called ' NSA_lab' and it's child
+directory called 'work' at the same time. Assume that directory ' NSA_lab' will branch-off your
+home directory and that you are in your home directory to start.
+
+developer@ccfl6-pc51:~$ mkdir -p NSA_lab/work
+-----------------------------------------------------------------
+Enter a Linux command to create the empty file called 'labtest1' in the directory 'NSA_lab' (you
+are still in your home directory).
+
+developer@ccfl6-pc51:~/NSA_lab$ touch labtest1
+------------------------------------------------------------
+Assume that your current directory contains the files 'labtest', 'labtest1', 'labtest2', 'labtest2a',
+'labtest3', and 'labtest4'.
+Issue a command to delete only the files 'labtest1' and 'labtest2'
+
+developer@ccfl6-pc51:~/NSA_lab$ rm labtest1 labtest2
+rm: cannot remove 'labtest2': No such file or directory
+developer@ccfl6-pc51:~/NSA_lab$ touch labtest1 labtest2 labtest3
+developer@ccfl6-pc51:~/NSA_lab$ rm labtest1 labtest2
+developer@ccfl6-pc51:~/NSA_lab$ ls
+labtest3  work
+--------------------------------------------------------------------
+Assume that you are NOT currently in your home directory. Enter a command to copy all files in
+your home directory beginning with the letter 'a' to the current directory.
+
+developer@ccfl6-pc51:~/NSA_lab$ cp ~/a* .
+cp: -r not specified; omitting directory '/home/developer/ads'
+cp: -r not specified; omitting directory '/home/developer/aqueena'
+cp: -r not specified; omitting directory '/home/developer/ashna'
+cp: -r not specified; omitting directory '/home/developer/ass'
+developer@ccfl6-pc51:~/NSA_lab$ ls
+androidstudio  a.py  labtest3  work
+------------------------------------------------------------------------------
+Enter a command to delete all files that have filenames starting with 'labtest', except 'labtest'
+itself (Delete all files starting with 'labtest' followed by one or more characters).
+
+developer@ccfl6-pc51:~/NSA_lab$ touch labtest labtest2
+developer@ccfl6-pc51:~/NSA_lab$ ls
+androidstudio  a.py  labtest  labtest2  work
+developer@ccfl6-pc51:~/NSA_lab$ rm labtest?*
+developer@ccfl6-pc51:~/NSA_lab$ ls
+androidstudio  a.py  labtest  work
+--------------------------------------------------------------------------------------------------------
+Enter a Linux command to remove a directory called 'assignments' and all of it's contents, and
+allow the system to prompt the user to remove each file or directory.
+Assume you are in the home directory, which happens to be the parent directory of
+'assignments' directory.
+
+developer@ccfl6-pc51:~$ mkdir -p assignments/ass1/ass2
+developer@ccfl6-pc51:~$ rm -rv assignments
+removed directory 'assignments/ass1/ass2'
+removed directory 'assignments/ass1'
+removed directory 'assignments'
+-------------------------------------------------------------------------------
+Here are two inverted-tree diagrams. Issue a command to change the left diagram to the right
+diagram. Assume that you are in your home directory and use relative pathnames. [home] is
+your home directory:
+
+eveloper@ccfl6-pc51:~$ cd NSA_lab
+developer@ccfl6-pc51:~/NSA_lab$ mkdir notes
+developer@ccfl6-pc51:~/NSA_lab$ cd ..
+developer@ccfl6-pc51:~$ mkdir ideas
+developer@ccfl6-pc51:~$ mkdir courses
+developer@ccfl6-pc51:~$ rmdir ideas
+developer@ccfl6-pc51:~$ rmdir courses
+developer@ccfl6-pc51:~$ mkdir ideas
+developer@ccfl6-pc51:~$ mkdir courses
+developer@ccfl6-pc51:~$ mv NSA_lab courses
+developer@ccfl6-pc51:~$ cd courses
+developer@ccfl6-pc51:~/courses$ ls
+NSA_lab
+developer@ccfl6-pc51:~/courses$ cd NSA_lab
+developer@ccfl6-pc51:~/courses/NSA_lab$ ls
+androidstudio  a.py  labtest  notes  work
+
+------------------------------------------------------------------------
+Issue a command to delete all files in your current directory with 2-character names.
+
+developer@ccfl6-pc51:~/courses/NSA_lab$ ls
+a3  aa  aa2  androidstudio  a.py  labtest  notes  work
+developer@ccfl6-pc51:~/courses/NSA_lab$ rm ??
+developer@ccfl6-pc51:~/courses/NSA_lab$ ls
+aa2  androidstudio  a.py  labtest  notes  work
