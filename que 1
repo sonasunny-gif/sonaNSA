@@ -1,0 +1,87 @@
+1.Create the above directory tree and enter necessary data into the files.Then perform the
+following operations using linux utilities.
+
+ mkdir -p project34/payroll
+cd project34
+mkdir sales
+cd payroll
+touch checks.dat pay2.dat
+cd sales
+mkdir regionA
+mkdir regionB
+cd regionA
+touch east.dat
+cd regionB
+touch west1.dat west2.dat west3.dat
+cat>checks.dat
+the file name is checks.
+its under payroll.
+
+ cat checks.dat
+the file name is checks.
+its under payroll.
+
+cat>pay2.dat
+The file name is pay2.
+Its under payroll
+
+cat>east.dat
+file name is east under region A.
+^C
+cat>west1.dat
+file name is west1.
+^C
+cat>west2.dat
+hello wolrd file names is west2.
+^C
+cat>west3.dat
+hii .
+file is west3.
+^C
+
+======================================================================================================
+  a) Copy pay2.dat to directories RegionA and RegionB.
+  cp pay2.dat ~/project34/sales/regionA/ && cp pay2.dat ~/project34/sales/regionB/
+======================================================================================================
+  b) Save the file west3.dat to RegionA under the name East1.dat
+  mv west3.dat ../regionA/east1.dat
+======================================================================================================
+  c) Combine the contents of Checks.dat and pay2.dat into a new file payment.dat
+under payroll.
+ paste checks.dat pay2.dat >payment.dat
+======================================================================================================
+  d)Get the count of the number of ordinary files in Sales directory.
+developer@ccfl6-pc51:~/Project34$ find Sales -type f | wc -l
+3
+=====================================================================================================
+  e)Find the list all *.dat files in Project34 directory
+developer@ccfl6-pc51:~$ find Project34 -type f -name "*.dat"
+Project34/Payroll/payment.dat
+Project34/Payroll/Checks.dat
+Project34/Payroll/Pay2.dat
+Project34/Sales/RegionA/East.dat
+Project34/Sales/RegionA/east1.dat
+Project34/Sales/RegionA/Pay2.dat
+========================================================================================================
+  f)Sort pay2.dat in the descending order of payment amount.
+  developer@ccfl6-pc51:~/Project34/Payroll$ sort -r Pay2.dat            
+60000
+5000
+40000
+20000
+1000
+=============================================================================================================
+  g)Display the list of all files in the Sales directory in uppercase.
+ developer@ccfl6-pc51:~/Project34$ find Sales -type f| tr 'a-z' 'A-Z'
+SALES/REGIONA/EAST.DAT
+SALES/REGIONA/EAST1.DAT
+SALES/REGIONA/PAY2.DAT
+============================================================================================================
+  h)Remove RegionB directory and its contents in one shot.
+  developer@ccfl6-pc51:~/Project34/Sales$ ls
+RegionA  RegionB
+developer@ccfl6-pc51:~/Project34/Sales$ rm -rf RegionB
+developer@ccfl6-pc51:~/Project34/Sales$ ls
+RegionA
+===============================================================================================================
+  
