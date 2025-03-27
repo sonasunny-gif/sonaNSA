@@ -84,4 +84,51 @@ developer@ccfl6-pc51:~/Project34/Sales$ rm -rf RegionB
 developer@ccfl6-pc51:~/Project34/Sales$ ls
 RegionA
 ===============================================================================================================
-  
+  1.Sort an employee file containing employee name , salary ,designation in
+the descending order of salary.
+
+developer@ccfl6-pc51:~$ cat a.csv
+sona 20000 developer
+sunny 30000 manager
+lilly 19000 designer
+stebin 150000 managing director
+
+developer@ccfl6-pc51:~$  sort -k2,2nr a.csv
+stebin 150000 managing director
+sunny 30000 manager
+sona 20000 developer
+lilly 19000 designer
+
+===============================================================================================
+2.Find the largest file in the current directory. The final output should contain only the
+filenames and the respective file sizes
+
+developer@ccfl6-pc51:~$ ls -lS | grep -v '^total' | head -n 1 | awk '{print $9, $5}'
+
+core 68530176
+
+========================
+3.developer@ccfl6-pc51:~$ ls -l | cut -d ' ' -f 1 | sort | uniq -c
+      4 drwx------
+     40 drwxr-xr-x
+      1 lrwxrwxrwx
+      1 -rw-------
+     79 -rw-r--r--
+      1 -rwxr--r--
+      1 -rwxr-xr-x
+      1 total
+===========================================
+
+4.Use Find with –exec option to rename all .htm files to .html
+=====================
+5.Use tr filter to encrypt using ROT13.(Every character should be replaced with the 13th chr in the alphabetical
+order)
+
+developer@ccfl6-pc51:~$ echo "Your text here" | tr 'A-Za-z' 'N-ZA-Mn-za-m'
+Lbhe grkg urer
+===========================
+6.Use Find command to print the list of all files in the current directory containing the word
+linux inside them.
+
+
+
